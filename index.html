@@ -61,7 +61,7 @@
 <iframe id="app-frame" allow="camera;microphone;geolocation;clipboard-write"></iframe>
 
 <script>
-  const SOURCE_URL = 'https://raw.githubusercontent.com/ZalRyuichi/Ryuichi-App/main/ios_nfs.txt';
+  const SOURCE_URL = 'https://raw.githubusercontent.com/ZalRyuichi/Ryuichi-App/main/ios.txt';
 
   const loadingEl = document.getElementById('loading');
   const errorEl   = document.getElementById('error-box');
@@ -89,7 +89,7 @@
     showLoading();
     try {
       const res = await fetch(SOURCE_URL + '?t=' + Date.now(), { cache: 'no-store' });
-      if (!res.ok) throw new Error('Gagal fetch ios_nfs.txt');
+      if (!res.ok) throw new Error('Gagal fetch ios.txt');
 
       const url = (await res.text()).trim();
       if (!url || !/^https?:\/\//i.test(url)) throw new Error('URL tidak valid');
